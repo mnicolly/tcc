@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Bombeiro</title>
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: -webkit-linear-gradient(150deg, #c00606 45%, #a20000 45%);
+            background-position: 50% 90%;
+            color: white;
+        }
+
+        .header {
+            background-color: #AB0909;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .select,
+        .nome1,
+        .end1,
+        .email1,
+        .cll,
+        .dataNasc {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 15px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgb(0, 0, 0);
+            outline: none;
+        }
+
+        .select1,
+        .select2,
+        .select3 {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 15px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgb(0, 0, 0);
+            outline: none;
+        }
+
+        .btn,
+        .btn-list {
+            background-color: hsl(46, 99%, 50%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-list {
+            background-color: hsl(46, 99%, 50%);
+            ;
+            margin-left: 10px;
+        }
+
+        .btn:hover,
+        .btn-list:hover {
+            background-color: #ff3131;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .corpo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .bomb {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #corpo-form {
+            background-color: #8b1818;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 420px;
+            margin: 150px auto 0 auto;
+        }
+
+        .txt {
+            text-align: center;
+            padding: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/">SOS Bombeiros</a>
+        <nav>
+            <a href="index.html"><img src="imagem/voltar.png" width="30" class="rounded float-left"></a>
+        </nav>
+    </header>
+
+    <div id="cadastro-atend">
+        <h1>CADASTRAR BOMBEIROS</h1>
+
+        <form method="POST" action="processa_cadastro_bombeiro.php">
+            <p class="cargo">Cargo</p>
+            <select class="select" name="Cargo">
+                <option value=""></option>
+                <option value="Coronel">Coronel</option>
+                <option value="Tenente coronel">Tenente coronel</option>
+                <option value="Major">Major</option>
+                <option value="Capitão">Capitão</option>
+                <option value="1ºTenente">1ºTenente</option>
+                <option value="2ºTenente">2ºTenente</option>
+                <option value="Subtenente">Subtenente</option>
+                <option value="1ºSargento">1ºSargento</option>
+                <option value="2ºSargento">2ºSargento</option>
+                <option value="Soldado">Soldado</option>
+                <option value="Cabo">Cabo</option>
+                <option value="Aluno oficial">Aluno oficial</option>
+                <option value="Aluno CFP">Aluno CFP</option>
+                <option value="Auxiliar de enfermagem">Auxiliar de enfermagem</option>
+            </select>
+
+            <p class="sexo">Sexo</p>
+            <select class="select1" name="Sexo">
+                <option value=""></option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <p class="estadoC">Estado civil</p>
+            <select class="select2" name="Estado_Civil">
+                <option value=""></option>
+                <option value="Casado">Casado</option>
+                <option value="Solteiro">Solteiro</option>
+                <option value="Divorciado">Divorciado</option>
+                <option value="Viúvo">Viúvo</option>
+                <option value="União estável">União estável</option>
+            </select>
+
+            <p class="tipoS">Tipo sanguíneo</p>
+            <select class="select3" name="Tipo_Sanguineo">
+                <option value=""></option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <p class="nomeC">Nome completo</p><input class="nome1" type="text" name="NomeBombeiro">
+            <p class="end">Endereço</p><input class="end1" type="text" name="Endereço">
+            <p class="email">Email</p><input class="email1" type="email" name="Email">
+            <p class="fone">Telefone</p><input class="cll" type="text" name="Telefone">
+            <p class="dataN">Data de nascimento</p><input class="dataNasc" type="date" name="Data_Nascimento">
+
+            <div style="display: flex; justify-content: center;">
+                <button class="btn" type="submit"> Salvar </button>
+                <a href="lista.php" class="btn btn-primary btn-block">
+                    
+                    <span class="fa fa-user-plus"></span> lista
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
